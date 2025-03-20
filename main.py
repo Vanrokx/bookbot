@@ -1,9 +1,11 @@
+from stats import get_num_words
+
 def main():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
     print("--- Begin report of books/frankenstein.txt ---")
     
-    print(f"{count_words(file_contents)} words found in the document")
+    print(f"{get_num_words(file_contents)} words found in the document")
     print("")
     
     chars = count_characters(file_contents)
@@ -14,8 +16,6 @@ def main():
     
     print("--- End report ---")
 
-def count_words(contents):
-    return len(contents.split())
 
 def count_characters(contents):
     characters = {}
